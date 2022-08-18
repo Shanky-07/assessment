@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {QuestionComponent} from "./question/question.component";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'assessment';
+  constructor(public dialog: MatDialog) {
+  }
+
+  openDialog() {
+    this.dialog.open(QuestionComponent);
+  }
 }
